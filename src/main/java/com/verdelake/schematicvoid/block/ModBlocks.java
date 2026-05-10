@@ -6,7 +6,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -20,10 +19,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> SCHEMATIC_VOID_BLOCK = registerBlock("schematic_void",
             () -> new SchematicVoidBlock(BlockBehaviour.Properties.of()
-                    .noCollission()      // Para que puedas atravesarlo
-                    .noOcclusion()       // Para que no corte el renderizado de bloques adyacentes
-                    .replaceable()       // Para que puedas poner bloques encima sin picarlo
-                    .pushReaction(PushReaction.DESTROY)
+                    .noCollission()
+                    .noOcclusion()
             ));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
