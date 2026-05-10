@@ -1,5 +1,7 @@
 package com.verdelake.schematicvoid;
 
+import com.verdelake.schematicvoid.block.ModBlocks;
+import com.verdelake.schematicvoid.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -46,6 +48,9 @@ public class SchematicVoid {
         // Note that this is necessary if and only if we want *this* class (SchematicVoid) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

@@ -1,0 +1,42 @@
+package com.verdelake.schematicvoid.block;
+
+import com.verdelake.schematicvoid.SchematicVoid;
+import com.verdelake.schematicvoid.item.ModItems;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+
+import java.util.function.Supplier;
+
+public class ModBlocks {
+    public static final DeferredRegister.Blocks BLOCKS =
+            DeferredRegister.createBlocks(SchematicVoid.MODID);
+
+    public static final DeferredBlock<Block> SCHEMATIC_VOID_BLOCK = registerBlock("schematic_void",
+            () -> new SchematicVoidBlock(BlockBehaviour.Properties.of()
+                    .noCollission()      // Para que puedas atravesarlo
+                    .noOcclusion()       // Para que no corte el renderizado de bloques adyacentes
+                    .replaceable()       // Para que puedas poner bloques encima sin picarlo
+                    .pushReaction(PushReaction.DESTROY)
+            ));
+
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
+}
