@@ -53,7 +53,7 @@ public class SchematicVoidRenderer {
         Frustum frustum = event.getFrustum();
 
         BlockPos playerPos = player.blockPosition();
-        int radius = 32;
+        int radius = 18;
         float size = 0.4f;
 
         Tesselator tess = Tesselator.getInstance();

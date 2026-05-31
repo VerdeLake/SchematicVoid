@@ -19,9 +19,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> SCHEMATIC_VOID_BLOCK = registerBlock("schematic_void",
             () -> new SchematicVoidBlock(BlockBehaviour.Properties.of()
-                    .noCollission()
-                    .noOcclusion()
-            ));
+                    .noCollission().noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
