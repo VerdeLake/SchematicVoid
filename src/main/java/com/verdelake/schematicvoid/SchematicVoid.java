@@ -3,10 +3,8 @@ package com.verdelake.schematicvoid;
 import com.simibubi.create.AllCreativeModeTabs;
 import com.verdelake.schematicvoid.block.ModBlocks;
 import com.verdelake.schematicvoid.item.ModItems;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 @Mod(SchematicVoid.MODID)

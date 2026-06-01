@@ -12,13 +12,11 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public abstract class SchematicannonMixin {
 
     @ModifyVariable(
-            method = "launchBlockOrBelt", // Metodo en línea 636 del archivo original
+            method = "launchBlockOrBelt",
             at = @At("HEAD"),
             argsOnly = true
     )
     private BlockState replaceVoidWithAir(BlockState blockState) {
-        // Si el bloque que va a disparar es nuestro Void, le pasamos Aire
-        // (Usa tu DeferredRegister para obtener la instancia del bloque)
         if (blockState != null && blockState.is(ModBlocks.SCHEMATIC_VOID_BLOCK.get())) {
             return Blocks.AIR.defaultBlockState();
         }
