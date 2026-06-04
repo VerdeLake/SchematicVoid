@@ -1,25 +1,35 @@
+### ![Create: Schematic Void](docs/assets/SchematicVoidTitle.png)
+Have you ever tried to use the Schematicannon to print a schematic containing a lot of air blocks (such as an underground base or a custom cave), only to have to go back and dig out all of the temporary blocks you've placed?
 
-Installation information
+**Create: Schematic Void** solves these issues by allowing you to craft a technical block that causes the Schematicannon to print Air exactly where you want it.
+
+![Before vs. After](docs/assets/BeforeVSAfter.gif)
+
+Features
 =======
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+* **Hollow Structures:** It allows you to print hollow structures or underground spaces directly, without needing to use temporary blocks that you have to break later.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+* **Multi-language Support:** Create: Schematic Void has been translated into English (en_us) and Spanish (es_es).
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+* **Automatic Air Replacement:** The Schematicannon will replace Schematic Voids with clean air automatically.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+* **Smart Material Requirements:** The Schematicannon won't ask you to put Schematic Voids inside its inventory to build the schematic.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+* **Barrier-like Appearance:** To keep your schematics clean, Schematic Voids are invisible and will only show their texture when you hold one in your hand.
+
+* **Survival Friendly:** The block is fully craftable in survival mode with this recipe:
+
+![Schematic Void's recipe](docs/assets/SchematicVoidRecipe.png)
+
+
+How to Use
+=======
+
+1. Design your build and place the **Schematic Void** blocks in the areas you want to keep as Air.
+2. Save your Schematic.
+3. Place the Schematicannon and ensure that you change the mode to **"Replace Solid Blocks With Any"**:
+
+![Schematicannon Settings](docs/assets/SchematicannonSettings.png)
+
+4. Fire away! All of the Schematic Void blocks will be replaced with Air allowing you to create exact copies of your building.
