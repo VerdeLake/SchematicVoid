@@ -11,7 +11,7 @@ license="${mod_license}"
     displayURL="https://modrinth.com/mod/schematicvoid"
     logoFile="schematicvoid.png"
     authors="VerdeLake"
-    description="TEST - Pre-Release 2"
+    description="A block for the Create mod that allows the Schematicannon to print empty spaces without temporary filler blocks."
 
 [[mixins]]
     config = "${mod_id}.mixins.json"
