@@ -1,4 +1,4 @@
-### ![Create: Schematic Void](docs/assets/SchematicVoidTitle.png)
+### [![Create: Schematic Void](docs/assets/SchematicVoidTitle.png)](https://modrinth.com/mod/schematicvoid)
 Have you ever tried to use the Schematicannon to print a schematic containing a lot of air blocks (such as an underground base or a custom cave), only to have to go back and dig out all of the temporary blocks you've placed?
 
 **Create: Schematic Void** solves these issues by allowing you to craft a technical block that causes the Schematicannon to print Air exactly where you want it.
